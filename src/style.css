@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0B1120;
+    color: #F8FAFC;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@layer components {
+  /* Action Buttons (Neon Restricted - #D946EF) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-4 py-2 bg-[#D946EF] text-[#051424] font-mono text-xs uppercase tracking-wider font-bold rounded-lg shadow-[0_0_18px_rgba(217,70,239,0.45)] hover:shadow-[0_0_26px_rgba(217,70,239,0.7)] hover:bg-[#E879F9] transition-all;
+  }
+  .btn-primary-lg {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#D946EF] text-[#051424] font-mono text-xs uppercase tracking-wider font-bold shadow-[0_0_18px_rgba(217,70,239,0.4)] hover:shadow-[0_0_26px_rgba(217,70,239,0.7)] hover:bg-[#E879F9] transition-all;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0B1120] border border-[#334155] hover:border-[#D946EF]/60 text-[#F8FAFC] hover:text-[#D946EF] font-mono text-xs uppercase tracking-wider font-semibold transition-all shadow-sm;
+  }
+
+  /* Structural Cards with Subtle Gradient Borders and Hovers */
+  .card-glass {
+    @apply relative p-7 rounded-2xl bg-[#1E293B] border border-[#334155] transition-all flex flex-col justify-between shadow-lg hover:shadow-xl hover:bg-gradient-to-br hover:from-[#360033]/15 hover:to-[#0B8793]/15 overflow-hidden;
+  }
+  .card-glass::before {
+    content: '';
+    @apply absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#360033] to-[#0B8793] opacity-80;
+  }
+
+  /* Structural Icons (Neutral) */
+  .icon-box {
+    @apply w-14 h-14 rounded-xl bg-[#0B1120] border border-[#334155] flex items-center justify-center text-[#94A3B8] shadow-sm transition-all;
+  }
+
+  /* Tags (Neutral) */
+  .tag-muted {
+    @apply px-2.5 py-1 rounded-lg bg-[#0B1120] border border-[#334155] text-[#94A3B8] font-mono text-[11px] font-medium;
+  }
+  .tag-highlight {
+    @apply px-2.5 py-1 rounded-lg bg-[#0B1120] border border-[#334155] text-[#F8FAFC] font-mono text-[11px] font-semibold;
+  }
+}
